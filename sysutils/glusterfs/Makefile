@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	glusterfs
-PORTVERSION=	3.7.2
-CATEGORIES=	net
+PORTVERSION=	3.7.6
+CATEGORIES=	sysutils net
 MASTER_SITES=	http://bits.gluster.org/pub/gluster/glusterfs/src/
-DISTNAME=	${PORTNAME}-3.7.2
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	GlusterFS distributed file system
@@ -16,10 +16,15 @@ LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone liburcu-bp.so:${PORTSD
 
 USE_GCC=	any
 
-USES=		bison gettext libtool pkgconfig python:build readline 
+USES=		bison gettext libtool pkgconfig python:build readline \
+		shebangfix
+SHEBANG_FILES=	extras/peer_add_secret_pub.in \
+		tools/glusterfind/S57glusterfind-delete-post.py \
+		extras/ganesha/scripts/ganesha-ha.sh
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+USE_SQLITE=	yes
 USE_RC_SUBR=	glusterd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
@@ -34,6 +39,6 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 CPPFLAGS+=	-I"${LOCALBASE}/include"
 LDFLAGS+=	-L"${LOCALBASE}/lib" -largp
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	GLUSTERLIBDIR="${PREFIX}/lib/${PORTNAME}/3.7.2"
+PLIST_SUB=	GLUSTERLIBDIR="${PREFIX}/lib/${PORTNAME}/${PORTVERSION}"
 
 .include <bsd.port.mk>
