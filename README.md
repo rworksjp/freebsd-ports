@@ -6,7 +6,7 @@ The add-on ports tree for FreeBSD ports system.
 
 To build packages in this repository:
 
-- Merge ports [official ports tree](https://github.com/freebsd/freebsd-ports.git) and [this repository](https://github.com/rworksjp/freebsd-ports.git) with [portshaker](https://github.com/smortex/portshaker)
+- Merge [official FreeBSD ports tree](https://github.com/freebsd/freebsd-ports.git) and [this repository](https://github.com/rworksjp/freebsd-ports.git) with [portshaker](https://github.com/smortex/portshaker)
 - Build package from merged ports tree with [poudriere](https://github.com/freebsd/poudriere)
 
 ### Preparation
@@ -23,7 +23,7 @@ Install `portshaker` and `poudriere`:
 # pkg install dialog4ports
 ```
 
-Put `/usr/local/etc/portshaker-config/freebsd_ports`:
+Put `/usr/local/etc/portshaker.d/freebsd_ports`:
 
 ```sh
 #!/bin/sh
@@ -37,7 +37,7 @@ git_clone_uri="https://github.com/freebsd/freebsd-ports.git"
 run_portshaker_command $*
 ```
 
-and `/usr/local/etc/portshaker-config/rworksjp`:
+and `/usr/local/etc/portshaker.d/rworksjp`:
 
 ```sh
 #!/bin/sh
@@ -88,7 +88,7 @@ Build `sysutils/glusterfs` package with `FreeBSD:10:amd64` builder:
 # poudriere bulk -j FreeBSD:10:amd64 -p rworksjp sysutils/glusterfs
 ```
 
-This creates packages, `glusterfs` its own and required, usually in `/usr/local/poudriere/data/packages/FreeBSD:10:amd64-rworksjp`
+This creates packages, `glusterfs` its own and required, usually under `/usr/local/poudriere/data/packages/FreeBSD:10:amd64-rworksjp/`
 
 ## Further readings
 
@@ -100,6 +100,6 @@ About [portshaker](https://github.com/smortex/portshaker), consult following:
 
 About [poudriere](https://github.com/freebsd/poudriere), consult following:
 
+- [Poudriere section in FreeBSD Porter's Handbook](https://www.freebsd.org/doc/en/books/porters-handbook/testing-poudriere.html)
+- [poudriere documentation](https://github.com/freebsd/poudriere/wiki)
 - [`man 8 poudriere`](https://www.freebsd.org/cgi/man.cgi?query=poudriere&apropos=0&sektion=8&manpath=FreeBSD+10.2-RELEASE+and+Ports&arch=default&format=html)
-- [poudriere documents](https://github.com/freebsd/poudriere/wiki)
-- [Poudriere section in FreeBSD Porters Handbook](https://www.freebsd.org/doc/en/books/porters-handbook/testing-poudriere.html)
