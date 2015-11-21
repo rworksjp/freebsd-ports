@@ -88,6 +88,8 @@ Build `sysutils/glusterfs` package with `FreeBSD:10:amd64` builder:
 # poudriere bulk -j FreeBSD:10:amd64 -p rworksjp sysutils/glusterfs
 ```
 
+This creates packages, `glusterfs` its own and required, usually in `/usr/local/poudriere/data/packages/FreeBSD:10:amd64-rworksjp`
+
 ## Further readings
 
 About [portshaker](https://github.com/smortex/portshaker), consult following:
