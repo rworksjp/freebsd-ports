@@ -13,19 +13,19 @@ To build packages in this repository:
 
 Install `portshaker` and `poudriere`:
 
-```
+```console
 # pkg install portshaker poudriere
 ```
 
 (Recommended but optional) Install `dialog4ports`, to specify ports build option with `poudriere options`:
 
-```
+```console
 # pkg install dialog4ports
 ```
 
 Put `/usr/local/etc/portshaker-config/freebsd_ports`:
 
-```
+```sh
 #!/bin/sh
 # $Id$
 
@@ -39,7 +39,7 @@ run_portshaker_command $*
 
 and `/usr/local/etc/portshaker-config/rworksjp`:
 
-```
+```sh
 #!/bin/sh
 
 . /usr/local/share/portshaker/portshaker.subr
@@ -52,7 +52,7 @@ run_portshaker_command $*
 
 Edit `/usr/local/etc/portshaker.conf`:
 
-```
+```sh
 mirror_base_dir=/var/cache/portshaker
 poudriere_ports_mountpoint="/usr/local/poudriere/ports"
 
@@ -70,7 +70,7 @@ For people building lots of packages, compression option of ZFS filesystem give 
 
 Creating poudirere builder jail, for example:
 
-```
+```console
 # poudriere jails -c -j FreeBSD:10:amd64 -v 10.2-RELEASE -a amd64
 ```
 
@@ -78,13 +78,13 @@ Creating poudirere builder jail, for example:
 
 Update ports trees and merge them with `portshaker`, instead of `poudriere ports -u`:
 
-```
+```console
 # portshaker
 ```
 
 Build `sysutils/glusterfs` package with `FreeBSD:10:amd64` builder:
 
-```
+```console
 # poudriere bulk -j FreeBSD:10:amd64 -p rworksjp sysutils/glusterfs
 ```
 
