@@ -94,12 +94,12 @@ This creates packages, `glusterfs` its own and required, usually under `/usr/loc
 
 About [portshaker](https://github.com/smortex/portshaker), consult following:
 
-- [`man 8 portshaker`](https://www.freebsd.org/cgi/man.cgi?query=portshaker&apropos=0&sektion=8&manpath=FreeBSD+10.2-RELEASE+and+Ports&arch=default&format=html)
-- [`man 5 portshaker.conf`](https://www.freebsd.org/cgi/man.cgi?query=portshaker.conf&sektion=5&apropos=0&manpath=FreeBSD+10.2-RELEASE+and+Ports)
-- [`man 5 portshaker.d`](https://www.freebsd.org/cgi/man.cgi?query=portshaker.d&sektion=5&apropos=0&manpath=FreeBSD+10.2-RELEASE+and+Ports)
+- [`man 8 portshaker`](https://www.freebsd.org/cgi/man.cgi?query=portshaker&apropos=0&sektion=8&manpath=FreeBSD+10.2-RELEASE+and+Ports&arch=default&format=html): how to use portshaker command
+- [`man 5 portshaker.conf`](https://www.freebsd.org/cgi/man.cgi?query=portshaker.conf&sektion=5&apropos=0&manpath=FreeBSD+10.2-RELEASE+and+Ports):configuration formats and options
+- [`man 5 portshaker.d`](https://www.freebsd.org/cgi/man.cgi?query=portshaker.d&sektion=5&apropos=0&manpath=FreeBSD+10.2-RELEASE+and+Ports): how to create or change files under /usr/local/etc/portshaker.d/
 
 About [poudriere](https://github.com/freebsd/poudriere), consult following:
 
-- [Poudriere section in FreeBSD Porter's Handbook](https://www.freebsd.org/doc/en/books/porters-handbook/testing-poudriere.html)
-- [poudriere documentation](https://github.com/freebsd/poudriere/wiki)
-- [`man 8 poudriere`](https://www.freebsd.org/cgi/man.cgi?query=poudriere&apropos=0&sektion=8&manpath=FreeBSD+10.2-RELEASE+and+Ports&arch=default&format=html)
+- [Poudriere section in FreeBSD Porter's Handbook](https://www.freebsd.org/doc/en/books/porters-handbook/testing-poudriere.html): general usage to building ports with poudriere
+- [poudriere documentation](https://github.com/freebsd/poudriere/wiki): poudriere official documentation, including design and combination with other tools
+- [`man 8 poudriere`](https://www.freebsd.org/cgi/man.cgi?query=poudriere&apropos=0&sektion=8&manpath=FreeBSD+10.2-RELEASE+and+Ports&arch=default&format=html): about poudriere command and subcommand and how to use these
