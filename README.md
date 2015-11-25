@@ -90,6 +90,10 @@ Build `sysutils/glusterfs` package with `FreeBSD:10:amd64` builder:
 
 This creates packages, `glusterfs` its own and required, usually under `/usr/local/poudriere/data/packages/FreeBSD:10:amd64-rworksjp/`
 
+## License
+
+Licensed under the BSD 2-clause License. For detailed information see [LICENSE](LICENSE).
+
 ## Further readings
 
 About [portshaker](https://github.com/smortex/portshaker), consult following:
