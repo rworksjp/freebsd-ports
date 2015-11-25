@@ -1,4 +1,5 @@
 # freebsd-ports
+[![License](https://img.shields.io/github/license/rworksjp/freebsd-ports.svg)](https://tldrlegal.com/license/bsd-2-clause-license-(freebsd))
 
 The add-on ports tree for FreeBSD ports system.
 
@@ -92,7 +93,7 @@ This creates packages, `glusterfs` its own and required, usually under `/usr/loc
 
 ## License
 
-Licensed under the BSD 2-clause License. For detailed information see [LICENSE](LICENSE).
+Licensed under the BSD 2-clause License. For detailed information see [LICENSE](./LICENSE).
 
 ## Further readings
 
