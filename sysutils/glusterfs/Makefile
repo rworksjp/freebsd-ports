@@ -61,4 +61,4 @@ CONFIGURE_ARGS+=	--disable-qemu-block
 PLIST_SUB+=	QEMU="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
