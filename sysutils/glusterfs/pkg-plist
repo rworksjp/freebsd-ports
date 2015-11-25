@@ -63,7 +63,7 @@ include/glusterfs/gfdb/gfdb_sqlite3_helper.h
 %%GLUSTERLIBDIR%%/xlator/features/prot_client.so
 %%GLUSTERLIBDIR%%/xlator/features/prot_dht.so
 %%GLUSTERLIBDIR%%/xlator/features/prot_server.so
-%%GLUSTERLIBDIR%%/xlator/features/qemu-block.so
+%%QEMU%%%%GLUSTERLIBDIR%%/xlator/features/qemu-block.so
 %%GLUSTERLIBDIR%%/xlator/features/quiesce.so
 %%GLUSTERLIBDIR%%/xlator/features/quota.so
 %%GLUSTERLIBDIR%%/xlator/features/quotad.so
