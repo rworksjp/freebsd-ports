@@ -14,8 +14,6 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	liburcu-bp.so:${PORTSDIR}/sysutils/liburcu
 
-USE_GCC=	any
-
 USES=		bison:build gettext libtool:build pkgconfig:build \
 		python:build readline shebangfix
 SHEBANG_FILES=	extras/peer_add_secret_pub.in \
