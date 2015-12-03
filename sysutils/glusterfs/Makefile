@@ -49,7 +49,7 @@ QEMU_DESC=	QEMU Block formats support
 .if ${OSVERSION} < 1000000
 WITH_OPENSSL_PORT=	yes
 RUN_DEPENDS+=	${KMODDIR}/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-.fi
+.endif
 
 .if ${PORT_OPTIONS:MARGP}
 LIB_DEPENDS+=	libargp.so:${PORTSDIR}/devel/argp-standalone 
