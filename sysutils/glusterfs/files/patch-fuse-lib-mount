@@ -1,0 +1,10 @@
+--- contrib/fuse-lib/mount.c.orig	2015-11-26 00:02:04.760234061 +0000
++++ contrib/fuse-lib/mount.c	2015-11-26 00:03:54.733212503 +0000
+@@ -256,6 +256,7 @@
+         build_iovec (&iov, &iovlen, "from", "/dev/fuse", -1);
+         build_iovec (&iov, &iovlen, "volname", source, -1);
+         build_iovec (&iov, &iovlen, "fd", fdstr, -1);
++	build_iovec (&iov, &iovlen, "allow_other", NULL, -1);
+         ret = nmount (iov, iovlen, mountflags);
+ #else
+         ret = mount (source, mountpoint, fstype, mountflags,
