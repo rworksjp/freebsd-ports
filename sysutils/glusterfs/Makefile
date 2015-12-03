@@ -14,8 +14,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	liburcu-bp.so:${PORTSDIR}/sysutils/liburcu
 
-USES=		bison:build gettext libtool:build pkgconfig:build \
-		python:build readline shebangfix
+USES=		bison gettext libtool pkgconfig python:build readline \
+		shebangfix
 SHEBANG_FILES=	extras/peer_add_secret_pub.in \
 		tools/glusterfind/S57glusterfind-delete-post.py \
 		extras/ganesha/scripts/ganesha-ha.sh
@@ -35,7 +35,8 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		ac_cv_func_setfsuid=no 	ac_cv_func_fdatasync=no \
 		ac_cv_func_llistxattr=no ac_cv_func_malloc_stats=no
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	GLUSTERLIBDIR="${PREFIX}/lib/${PORTNAME}/${PORTVERSION}"
+PLIST_SUB=	GLUSTERLIBDIR="lib/${PORTNAME}/${PORTVERSION}"
+KMODDIR?=	/boot/modules
 
 OPTIONS_DEFINE=	ARGP QEMU
 OPTIONS_DEFAULT=QEMU
@@ -43,6 +44,11 @@ ARGP_DESC=	Use devel/argp-standalone instead of bundled one
 QEMU_DESC=	QEMU Block formats support
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000000
+WITH_OPENSSL_PORT=	yes
+RUN_DEPENDS+=	${KMODDIR}/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+.fi
 
 .if ${PORT_OPTIONS:MARGP}
 LIB_DEPENDS+=	libargp.so:${PORTSDIR}/devel/argp-standalone 
