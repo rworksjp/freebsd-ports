@@ -67,6 +67,7 @@ PLIST_SUB+=	QEMU="@comment "
 .endif
 
 post-install:
-	@${LN} -sf ${PREFIX}/sbin/mount_glusterfs /usr/sbin
+	@${MKDIR} ${STAGEDIR}/usr/sbin
+	@${LN} -sf ${PREFIX}/sbin/mount_glusterfs ${STAGEDIR}/usr/sbin/
 
 .include <bsd.port.mk>
