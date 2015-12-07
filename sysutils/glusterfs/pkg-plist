@@ -170,6 +170,8 @@ sbin/glusterd
 sbin/glusterfs
 sbin/glusterfsd
 sbin/mount_glusterfs
+@exec ln -fs %D/%F /usr/sbin
+@unexec rm -f /usr/sbin/mount_glusterfs
 sbin/snap_scheduler.py
 sbin/umountd
 %%PORTDOCS%%%%DOCSDIR%%/benchmarking/README
