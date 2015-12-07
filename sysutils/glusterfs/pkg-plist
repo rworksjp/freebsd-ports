@@ -170,8 +170,6 @@ sbin/glusterd
 sbin/glusterfs
 sbin/glusterfsd
 sbin/mount_glusterfs
-@exec ln -fs %D/%F /usr/sbin
-@unexec rm -f /usr/sbin/mount_glusterfs
 sbin/snap_scheduler.py
 sbin/umountd
 %%PORTDOCS%%%%DOCSDIR%%/benchmarking/README
@@ -186,6 +184,7 @@ sbin/umountd
 %%DATADIR%%/scripts/stop-all-gluster-processes.sh
 @sample /var/db/glusterd/groups/virt.sample
 /var/db/glusterd/hooks/1/delete/post/S57glusterfind-delete-post.py
+/usr/sbin/mount_glusterfs
 @dir /var/db/glusterd/glusterfind/.keys
 @dir /var/db/glusterd/glusterfind
 @dir /var/db/glusterd/groups
