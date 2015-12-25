@@ -11,6 +11,8 @@ COMMENT=	MySQL management utilities
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
+
 USES=		python:2 shebangfix
 USE_PYTHON=	distutils autoplist
 
