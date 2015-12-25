@@ -26,15 +26,15 @@ POST_PLIST+=	process-sample-files
 post-patch:
 	@${REINPLACE_CMD} -e "s!'/etc'!'${PREFIX}/etc'!" ${WRKSRC}/setup.py
 
+process-sample-files:
+.for f in ${SAMPLE_FILES}
+	@f=${STAGEDIR}${"${f:M/*}" != "":?:${PREFIX}/}${f};${MV} $$f $$f.sample
+	@${REINPLACE_CMD} -e "s|^${f}$$|@sample ${f}.sample|" ${TMPPLIST}
+.endfor
+
 .include <bsd.port.pre.mk>
 
 # PYDISTUTILS_INSTALLNOSINGLE is deprecated so...
 PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
-
-process-sample-files:
-.for _file in ${SAMPLE_FILES:C|^|${STAGEDIR}${PREFIX}/|}
-	@${MV} ${_file} ${_file}.sample
-	@${REINPLACE_CMD} -e 's|^\(${_file}\)$$|@sample \1.sample|' ${TMPPLIST}
-.endfor
 
 .include <bsd.port.post.mk>
