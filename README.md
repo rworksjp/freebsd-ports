@@ -1,5 +1,5 @@
 # freebsd-ports
-[![License](https://img.shields.io/github/license/rworksjp/freebsd-ports.svg)](https://tldrlegal.com/license/bsd-2-clause-license-(freebsd))
+[![License](https://img.shields.io/github/license/rworksjp/freebsd-ports.svg?maxAge=2592000)](https://tldrlegal.com/license/bsd-2-clause-license-(freebsd))
 
 The add-on ports tree for FreeBSD ports system.
 
